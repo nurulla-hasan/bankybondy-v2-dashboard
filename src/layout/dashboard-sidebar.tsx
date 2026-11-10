@@ -33,8 +33,8 @@ export function DashboardSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="h-16 border-b px-4 flex flex-row items-center">
-        <Logo size="md" showText href="/dashboard" />
+      <SidebarHeader className="h-16 border-b px-4 flex flex-row items-center justify-center">
+        <Logo size="md" href="/dashboard" />
       </SidebarHeader>
 
       <SidebarContent>

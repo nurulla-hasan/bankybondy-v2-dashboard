@@ -98,8 +98,8 @@
   --amber-accent: oklch(0.76 0.15 75); /* Warning / Pending Amber */
   --violet-accent: oklch(0.6 0.2 300); /* Social Violet */
   --pink-accent: oklch(0.62 0.24 350); /* Surprise Pink */
-  /* Traffic-light capsule mark: v1 form, v2 palette (fixed in both themes). */
-  --brand-capsule: #12162b;
+  /* Brand capsule: light indigo chip on light theme, deep navy on dark. */
+  --brand-capsule: oklch(0.93 0.035 265);
   --brand-capsule-border: #6366f1;
   /* Match-chain exchange tones — hue paired by the backend palette; -ink is the readable text shade. */
   --tone-red: oklch(0.63 0.21 25); /* ≈ red-500 */
@@ -120,7 +120,7 @@
   --overlay: oklch(0 0 0 / 0.3);
   --chart-1: oklch(0.55 0.22 265);
   --chart-2: oklch(0.68 0.17 155);
-  --chart-3: oklch(0.72 0.14 205);
+  --chart-3: oklch(42.351% 0.07239 205.431);
   --chart-4: oklch(0.75 0.15 75);
   --chart-5: oklch(0.6 0.22 25);
   --sidebar: oklch(0.98 0.005 260);
@@ -182,7 +182,7 @@
   --overlay: oklch(0 0 0 / 0.5);
   --chart-1: oklch(0.62 0.24 265);
   --chart-2: oklch(0.72 0.17 155);
-  --chart-3: oklch(0.75 0.14 205);
+  --chart-3: oklch(43.325% 0.07402 205.135);
   --chart-4: oklch(0.78 0.15 75);
   --chart-5: oklch(0.65 0.2 25);
   --sidebar: oklch(0.16 0.025 265);

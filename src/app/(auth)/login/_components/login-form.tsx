@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useForm } from "@tanstack/react-form";
-import { ShieldAlert } from "lucide-react";
+import { ShieldAlert, ShieldCheck } from "lucide-react";
 
 import {
   Card,
@@ -50,7 +50,10 @@ export function LoginForm({
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="gap-3">
+        <div className="w-fit rounded-xl bg-primary/10 p-2.5 text-primary">
+          <ShieldCheck className="size-5" aria-hidden />
+        </div>
         <CardTitle className="font-heading text-xl">{t("loginTitle")}</CardTitle>
         <CardDescription>{t("loginSubtitle")}</CardDescription>
       </CardHeader>
