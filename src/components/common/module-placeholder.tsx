@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Construction } from "lucide-react";
 
+import { SectionHeading } from "@/components/common/section-heading";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -12,14 +13,13 @@ export function ModulePlaceholder({ titleKey }: { titleKey: string }) {
 
   return (
     <div className="flex flex-col gap-6">
-      <header className="flex flex-col gap-1">
-        <h1 className="font-heading text-2xl font-bold tracking-tight">
-          {nav(titleKey)}
-        </h1>
-        <p className="text-sm text-muted-foreground">
-          {t("comingSoonTitle")}
-        </p>
-      </header>
+      <SectionHeading
+        as="h3"
+        alignment="left"
+        constrain={false}
+        title={nav(titleKey)}
+        description={t("comingSoonTitle")}
+      />
 
       <Card>
         <CardContent className="flex flex-col items-center gap-4 py-16 text-center">

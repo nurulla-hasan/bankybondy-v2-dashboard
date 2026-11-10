@@ -2,6 +2,7 @@ import { getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
+import { SectionHeading } from "@/components/common/section-heading";
 import {
   Card,
   CardContent,
@@ -20,12 +21,13 @@ export default async function ProfilePage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <header className="flex flex-col gap-1">
-        <h1 className="font-heading text-2xl font-bold tracking-tight">
-          {t("profileTitle")}
-        </h1>
-        <p className="text-sm text-muted-foreground">{t("profileSubtitle")}</p>
-      </header>
+      <SectionHeading
+        as="h3"
+        alignment="left"
+        constrain={false}
+        title={t("profileTitle")}
+        description={t("profileSubtitle")}
+      />
 
       <Card className="max-w-xl">
         <CardHeader>

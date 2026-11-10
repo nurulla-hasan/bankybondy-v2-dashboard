@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { PageWrapper } from "@/components/common/page-wrapper";
 import type { Session } from "@/types";
 import { DashboardHeader } from "./dashboard-header";
 import { DashboardSidebar } from "./dashboard-sidebar";
@@ -18,9 +17,7 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
       <DashboardSidebar />
       <SidebarInset>
         <DashboardHeader user={user} />
-        <div className="flex-1">
-          <PageWrapper padding="compact">{children}</PageWrapper>
-        </div>
+        <div className="flex-1 p-4 lg:p-6">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

@@ -239,3 +239,13 @@
   }
 }
 
+
+/* Skeleton shimmer: the overlay slides across the muted block. */
+@keyframes shimmer {
+  from {
+    translate: -100% 0;
+  }
+  to {
+    translate: 100% 0;
+  }
+}
