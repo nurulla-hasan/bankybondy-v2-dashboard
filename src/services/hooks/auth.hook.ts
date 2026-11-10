@@ -1,7 +1,13 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 
-import { loginUser, logoutUser } from "../api/auth.api";
+import {
+  changePassword,
+  getMyProfile,
+  loginUser,
+  logoutUser,
+  updateMyProfile,
+} from "../api/auth.api";
 
 export function useLogin() {
   const queryClient = useQueryClient();
@@ -12,6 +18,28 @@ export function useLogin() {
       queryClient.clear();
     },
   });
+}
+
+export function useMyProfile() {
+  return useQuery({
+    queryKey: ["auth", "me"],
+    queryFn: async () => (await getMyProfile()).data,
+  });
+}
+
+export function useUpdateProfile() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: updateMyProfile,
+    onSuccess: (response) => {
+      queryClient.setQueryData(["auth", "me"], response.data);
+    },
+  });
+}
+
+export function useChangePassword() {
+  return useMutation({ mutationFn: changePassword });
 }
 
 export function useLogout() {

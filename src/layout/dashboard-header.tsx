@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { LogOut, UserRound } from "lucide-react";
+import { LogOut, Settings2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { SidebarTrigger } from "@/components/ui/sidebar";
@@ -66,11 +66,11 @@ export function DashboardHeader({ user }: { user: Session }) {
 
             <DropdownMenuGroup>
               <DropdownMenuItem
-                render={<Link href="/profile" />}
+                render={<Link href="/settings" />}
                 className="flex cursor-pointer items-center gap-2"
               >
-                <UserRound className="size-4" />
-                {t("profile")}
+                <Settings2 className="size-4" />
+                {t("settings")}
               </DropdownMenuItem>
             </DropdownMenuGroup>
 
