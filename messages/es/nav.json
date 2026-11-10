@@ -1,0 +1,16 @@
+{
+  "portalTitle": "Bankybondy Admin",
+  "sectionManagement": "Gestión",
+  "sectionSystem": "Sistema",
+  "overview": "Resumen",
+  "users": "Usuarios",
+  "bonds": "Vínculos",
+  "matching": "Matcheo",
+  "payments": "Pagos",
+  "content": "Contenido",
+  "notifications": "Notificaciones",
+  "reports": "Reportes y Feedback",
+  "settings": "Configuración",
+  "profile": "Perfil",
+  "signOut": "Cerrar sesión"
+}

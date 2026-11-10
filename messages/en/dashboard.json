@@ -1,0 +1,14 @@
+{
+  "overviewTitle": "Overview",
+  "overviewSubtitle": "Platform health at a glance.",
+  "welcome": "Welcome back",
+  "kpiTotalUsers": "Users",
+  "kpiActiveBonds": "Active bonds",
+  "kpiMatchesToday": "Matches today",
+  "kpiPendingReports": "Pending reports",
+  "kpiHint": "Live data arrives with the module.",
+  "comingSoonTitle": "Module in progress",
+  "comingSoonBody": "This section is part of the dashboard template. Its data and actions will be wired in the next step.",
+  "profileTitle": "Profile",
+  "profileSubtitle": "Your admin account."
+}

@@ -1,0 +1,14 @@
+{
+  "overviewTitle": "Resumen",
+  "overviewSubtitle": "Salud de la plataforma de un vistazo.",
+  "welcome": "Bienvenido de nuevo",
+  "kpiTotalUsers": "Usuarios",
+  "kpiActiveBonds": "Vínculos activos",
+  "kpiMatchesToday": "Matches de hoy",
+  "kpiPendingReports": "Reportes pendientes",
+  "kpiHint": "Los datos en vivo llegan con el módulo.",
+  "comingSoonTitle": "Módulo en progreso",
+  "comingSoonBody": "Esta sección forma parte de la plantilla. Sus datos y acciones se conectarán en el siguiente paso.",
+  "profileTitle": "Perfil",
+  "profileSubtitle": "Tu cuenta de administrador."
+}
