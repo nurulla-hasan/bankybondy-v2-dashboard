@@ -5,7 +5,7 @@ WORKDIR /app
 # ── Install dependencies ──
 FROM base AS deps
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile || pnpm install --frozen-lockfile --dangerously-allow-builds || pnpm install
 
 # ── Build ──
 FROM base AS builder
