@@ -20,6 +20,7 @@ export default getRequestConfig(async () => {
       Auth: (await import(`../../messages/${locale}/auth.json`)).default,
       Dashboard: (await import(`../../messages/${locale}/dashboard.json`))
         .default,
+      Users: (await import(`../../messages/${locale}/users.json`)).default,
     },
   };
 });

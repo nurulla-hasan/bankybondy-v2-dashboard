@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { ThemeToggle } from "@/components/common/theme-toggle";
 import { LanguageToggle } from "@/components/common/language-toggle";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
@@ -20,12 +20,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { getInitials } from "@/lib/utils";
 import { successToast } from "@/lib/toast";
-import { useLogout } from "@/services";
+import { useLogout, useMyProfile } from "@/services";
 import type { Session } from "@/types";
 
 export function DashboardHeader({ user }: { user: Session }) {
   const t = useTranslations("Nav");
   const { mutate: logout, isPending: isLoggingOut } = useLogout();
+  // The access token carries identity and role only, so the avatar/name come
+  // from the profile endpoint (cached for 5 minutes by the query client).
+  const profile = useMyProfile();
+  const displayName = profile.data?.name || user.email;
 
   const handleLogout = () => {
     logout(undefined, {
@@ -44,7 +48,11 @@ export function DashboardHeader({ user }: { user: Session }) {
         <DropdownMenu>
           <DropdownMenuTrigger className="cursor-pointer rounded-full outline-hidden focus-visible:ring-3 focus-visible:ring-ring/50">
             <Avatar>
-              <AvatarFallback>{getInitials(user.email)}</AvatarFallback>
+              <AvatarImage
+                src={profile.data?.profile_image || undefined}
+                alt={displayName}
+              />
+              <AvatarFallback>{getInitials(displayName)}</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
 
@@ -53,8 +61,13 @@ export function DashboardHeader({ user }: { user: Session }) {
               <DropdownMenuLabel className="font-normal">
                 <div className="flex flex-col gap-1">
                   <p className="truncate text-sm font-semibold leading-tight">
-                    {user.email}
+                    {displayName}
                   </p>
+                  {profile.data?.name && (
+                    <p className="truncate text-xs text-muted-foreground">
+                      {user.email}
+                    </p>
+                  )}
                   <div>
                     <Badge variant="admin">{user.role}</Badge>
                   </div>

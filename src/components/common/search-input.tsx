@@ -10,10 +10,18 @@ import { cn } from "@/lib/utils";
 const SEARCH_KEY = "searchTerm";
 const DEBOUNCE_MS = 300;
 
-export function SearchInput() {
+export function SearchInput({
+  placeholder,
+  ariaLabel,
+}: {
+  placeholder?: string;
+  ariaLabel?: string;
+} = {}) {
   const t = useTranslations("Common");
   const { getFilter, updateFilter } = useNextFilter<typeof SEARCH_KEY>();
   const value = getFilter(SEARCH_KEY);
+  const resolvedPlaceholder = placeholder ?? t("searchPlaceholder");
+  const resolvedAriaLabel = ariaLabel ?? t("searchLabel");
 
   return (
     <div className={cn("relative w-full sm:max-w-64")}>
@@ -27,8 +35,8 @@ export function SearchInput() {
             debounce: DEBOUNCE_MS,
           })
         }
-        placeholder={t("searchPlaceholder")}
-        aria-label={t("searchLabel")}
+        placeholder={resolvedPlaceholder}
+        aria-label={resolvedAriaLabel}
         className="pr-8 pl-9"
       />
 

@@ -1,5 +1,13 @@
-import { ModulePlaceholder } from "@/components/common/module-placeholder";
+import { redirect } from "next/navigation";
 
-export default function UsersPage() {
-  return <ModulePlaceholder titleKey="users" />;
+import { getSession } from "@/lib/session";
+
+import { UsersView } from "./_components";
+
+export default async function UsersPage() {
+  const session = await getSession();
+
+  if (!session) redirect("/login");
+
+  return <UsersView role={session.role} />;
 }
