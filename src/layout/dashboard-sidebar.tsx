@@ -33,7 +33,7 @@ export function DashboardSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="h-16 border-b px-4 flex flex-row items-center justify-center">
+      <SidebarHeader className="h-16 border-b px-4 flex flex-row items-center justify-start group-data-[collapsible=icon]:justify-center">
         <Logo size="md" href="/dashboard" />
       </SidebarHeader>
 

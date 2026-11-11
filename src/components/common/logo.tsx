@@ -6,8 +6,8 @@ import { BrandMark } from "./brand-logo";
 export function Logo({
   className,
   size = "md",
-  showText = false,
-  showTextOnMobile = false,
+  showText = true,
+  showTextOnMobile = true,
   href = "/",
 }: {
   className?: string;
@@ -23,28 +23,26 @@ export function Logo({
     <Link
       href={href}
       className={cn(
-        "inline-flex items-center gap-3 font-semibold tracking-tight transition-opacity hover:opacity-90",
+        "inline-flex items-center gap-2.5 font-semibold tracking-tight transition-opacity hover:opacity-90",
         className
       )}
     >
-      <BrandMark size={svgSize} />
+      <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground font-heading font-black shadow-sm">
+        B
+      </div>
 
-      {showText && (
-        <span
-          className={cn(
-            "font-extrabold tracking-tight font-heading text-foreground",
-            size === "lg" && "text-2xl tracking-tighter",
-            size === "md" && "text-xl tracking-tight",
-            size === "sm" && "text-base"
-          )}
-        >
-          Bankybondy
-        </span>
-      )}
-
+      <span
+        className={cn(
+          "font-extrabold tracking-tight font-heading text-foreground truncate group-data-[collapsible=icon]:hidden",
+          size === "lg" && "text-2xl tracking-tighter",
+          size === "md" && "text-xl tracking-tight",
+          size === "sm" && "text-base"
+        )}
+      >
+        Banky<span className="text-primary">bondy</span>
+      </span>
     </Link>
   );
-
 }
 
 

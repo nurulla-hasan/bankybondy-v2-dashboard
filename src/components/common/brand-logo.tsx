@@ -17,34 +17,16 @@ export function BrandMark({ className, size = 30, ...props }: BrandMarkProps) {
       role="img"
       aria-label="Bankybondy"
       className={cn(
-        "flex shrink-0 select-none items-center justify-center rounded-[50%] border-2 border-brand-capsule-border/60 bg-brand-capsule",
-        isLg && "h-9 w-32 gap-3 p-2",
-        !isLg && !isSm && "h-8 w-28 gap-2.5 p-2",
-        isSm && "h-7 w-22 gap-2 p-1.5",
+        "flex shrink-0 select-none items-center justify-center font-extrabold tracking-tighter text-primary font-heading",
+        isLg && "text-xl",
+        !isLg && !isSm && "text-lg",
+        isSm && "text-base",
         className,
       )}
       {...props}
     >
-      <span
-        className={cn(
-          "rounded-full bg-cyan-glow",
-          isSm ? "size-1.5" : "size-2",
-        )}
-      />
-      <span
-        className={cn(
-          "rounded-full bg-primary",
-          isLg && "h-2 w-12",
-          !isLg && !isSm && "h-2 w-10",
-          isSm && "h-1.5 w-7",
-        )}
-      />
-      <span
-        className={cn(
-          "rounded-full bg-emerald-accent",
-          isSm ? "size-1.5" : "size-2",
-        )}
-      />
+      <span className="text-foreground">Banky</span>
+      <span className="text-primary">bondy</span>
     </div>
   );
 }
