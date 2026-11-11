@@ -23,7 +23,7 @@ export function SettingsView({ role }: { role: string }) {
 
       <ProfileCard role={role} />
       <PasswordCard />
-      <MatchingSection />
+      <MatchingSection role={role} />
     </div>
   );
 }

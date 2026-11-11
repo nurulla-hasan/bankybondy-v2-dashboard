@@ -1,4 +1,9 @@
 import { z } from "zod";
+import type {
+  MatchingSettings,
+  MatchingSettingsValues,
+  UpdateMatchingSettingsPayload,
+} from "@/types";
 
 export const updateProfileSchema = z.object({
   name: z.string().trim().min(2, { error: "Name is too short" }),
@@ -25,28 +30,36 @@ export const changePasswordSchema = z
 
 export type ChangePasswordSchemaType = z.infer<typeof changePasswordSchema>;
 
-export const candidateModes = ["hybrid", "knn", "frontier"] as const;
+export const candidateModes = ["vector", "knn"] as const;
 
 export const matchingSettingsSchema = z.object({
   candidateMode: z.enum(candidateModes),
-  cacheTtl: z.number().int().min(0).max(1440),
+  frontierEnabled: z.boolean(),
+  cacheTtlMinutes: z.number().int().min(0).max(43200),
   surpriseFloor: z.number().min(0).max(1),
   surpriseMargin: z.number().min(0).max(1),
-  frontierSeeds: z.number().int().min(1).max(200),
-  sweepBatch: z.number().int().min(1).max(5000),
+  frontierSeeds: z.number().int().min(1).max(20),
+  sweepBatch: z.number().int().min(1).max(20000),
   sweepEnabled: z.boolean(),
-  sweepCron: z.string().trim().min(1, { error: "Schedule is required" }),
-});
+  // Cron syntax (including optional seconds) is validated by the server.
+  sweepCron: z.string().trim().min(1, { error: "Schedule is required" }).max(120),
+}) satisfies z.ZodType<MatchingSettingsValues>;
 
 export type MatchingSettingsType = z.infer<typeof matchingSettingsSchema>;
 
-export const defaultMatchingSettings: MatchingSettingsType = {
-  candidateMode: "hybrid",
-  cacheTtl: 30,
-  surpriseFloor: 0.35,
-  surpriseMargin: 0.12,
-  frontierSeeds: 24,
-  sweepBatch: 500,
-  sweepEnabled: true,
-  sweepCron: "0 */6 * * *",
-};
+/** Normalize the draft and allowlist changed values; never send audit metadata. */
+export function createMatchingSettingsPatch(
+  opening: MatchingSettings,
+  draft: MatchingSettingsValues,
+): UpdateMatchingSettingsPayload | null {
+  const values = matchingSettingsSchema.parse(draft);
+  const changes = Object.fromEntries(
+    matchingSettingsSchema.keyof().options
+      .filter((key) => values[key] !== opening[key])
+      .map((key) => [key, values[key]]),
+  );
+
+  return Object.keys(changes).length
+    ? { expectedRevision: opening.revision, ...changes }
+    : null;
+}
