@@ -1,7 +1,14 @@
 import {
+  AudioLines,
+  CircleDollarSign,
   Flag,
+  Handshake,
   LayoutDashboard,
+  ListOrdered,
+  MapPinned,
   Settings,
+  TrendingUp,
+  UserCog,
   Users,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -24,8 +31,19 @@ export const adminNavigation: NavigationGroup[] = [
     key: "sectionManagement",
     items: [
       { key: "overview", href: "/dashboard", icon: LayoutDashboard },
+      { key: "income", href: "/income", icon: TrendingUp },
+      { key: "skills", href: "/skills", icon: ListOrdered },
+      { key: "audioTopics", href: "/audio-topic", icon: CircleDollarSign },
+      {
+        key: "audioModeration",
+        href: "/audio-moderation",
+        icon: AudioLines,
+      },
+      { key: "heatMap", href: "/heat-map", icon: MapPinned },
+      { key: "report", href: "/report", icon: Flag },
+      { key: "makeAdmin", href: "/make-admin", icon: UserCog },
       { key: "users", href: "/users", icon: Users },
-      { key: "reports", href: "/reports", icon: Flag },
+      { key: "donors", href: "/donors", icon: Handshake },
     ],
   },
   {
