@@ -22,6 +22,7 @@ export default getRequestConfig(async () => {
         .default,
       Users: (await import(`../../messages/${locale}/users.json`)).default,
       Skills: (await import(`../../messages/${locale}/skills.json`)).default,
+      Topics: (await import(`../../messages/${locale}/topics.json`)).default,
     },
   };
 });
