@@ -1,0 +1,12 @@
+{
+  "sortNewest": "Más recientes",
+  "sortOldest": "Más antiguos",
+  "sortAmountHigh": "Mayor importe",
+  "sortAmountLow": "Menor importe",
+  "columnDonor": "Donante",
+  "columnAmount": "Importe",
+  "columnTransaction": "ID de transacción",
+  "columnDate": "Fecha",
+  "unknownUser": "Usuario eliminado",
+  "loadError": "No se pudieron cargar los donantes."
+}

@@ -26,6 +26,7 @@ export default getRequestConfig(async () => {
       Topics: (await import(`../../messages/${locale}/topics.json`)).default,
       Reports: (await import(`../../messages/${locale}/reports.json`)).default,
       Income: (await import(`../../messages/${locale}/income.json`)).default,
+      Donors: (await import(`../../messages/${locale}/donors.json`)).default,
     },
   };
 });

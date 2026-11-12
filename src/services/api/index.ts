@@ -1,5 +1,6 @@
 export * from "./admins.api";
 export * from "./auth.api";
+export * from "./donors.api";
 export * from "./income.api";
 export * from "./meta.api";
 export * from "./reports.api";

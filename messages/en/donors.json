@@ -1,0 +1,12 @@
+{
+  "sortNewest": "Newest first",
+  "sortOldest": "Oldest first",
+  "sortAmountHigh": "Highest amount",
+  "sortAmountLow": "Lowest amount",
+  "columnDonor": "Donor",
+  "columnAmount": "Amount",
+  "columnTransaction": "Transaction ID",
+  "columnDate": "Date",
+  "unknownUser": "Deleted user",
+  "loadError": "Could not load donors."
+}
