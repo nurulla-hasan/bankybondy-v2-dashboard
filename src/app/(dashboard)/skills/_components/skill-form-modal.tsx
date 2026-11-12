@@ -59,33 +59,30 @@ export function SkillFormModal({ skill }: { skill?: Skill }) {
     setOpen(nextOpen);
   }
 
-  const trigger = isEdit ? (
-    <Tooltip>
-      <TooltipTrigger
-        render={
-          <Button
-            variant="ghost"
-            size="icon"
-            aria-label={t("editSkill")}
-          >
-            <Pencil aria-hidden />
-          </Button>
-        }
-      />
-      <TooltipContent>{t("editSkill")}</TooltipContent>
-    </Tooltip>
-  ) : (
-    <Button>
-      <Plus aria-hidden />
-      {t("addSkill")}
-    </Button>
-  );
-
-  return (
+  const modal = (
     <Modal
       open={open}
       onOpenChange={handleOpenChange}
-      actionTrigger={trigger}
+      actionTrigger={
+        isEdit ? (
+          <TooltipTrigger
+            render={
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label={t("editSkill")}
+              >
+                <Pencil aria-hidden />
+              </Button>
+            }
+          />
+        ) : (
+          <Button>
+            <Plus aria-hidden />
+            {t("addSkill")}
+          </Button>
+        )
+      }
       title={isEdit ? t("editTitle") : t("createTitle")}
       description={isEdit ? t("editDescription") : t("createDescription")}
     >
@@ -134,5 +131,16 @@ export function SkillFormModal({ skill }: { skill?: Skill }) {
         </form.Subscribe>
       </form>
     </Modal>
+  );
+
+  if (!isEdit) return modal;
+
+  // Tooltip must wrap the modal: DialogTrigger merges its click props into
+  // `actionTrigger`, so the trigger itself has to be the TooltipTrigger.
+  return (
+    <Tooltip>
+      {modal}
+      <TooltipContent>{t("editSkill")}</TooltipContent>
+    </Tooltip>
   );
 }
