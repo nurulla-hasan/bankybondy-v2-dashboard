@@ -1,0 +1,14 @@
+{
+  "title": "Mapa de calor",
+  "subtitle": "Dónde están los usuarios cuando buscan un lazo, agrupados por ubicación y ciudad.",
+  "mapTitle": "Usuarios por ubicación",
+  "citiesTitle": "Ciudades principales",
+  "usersCount": "{count, plural, one {# usuario} other {# usuarios}}",
+  "clustersCount": "{count, plural, one {# grupo de ubicaciones} other {# grupos de ubicaciones}}",
+  "noLocationData": "No hay datos de ubicación disponibles",
+  "noCityData": "Aún no hay datos de ciudades.",
+  "emptyTitle": "Aún no hay datos de ubicación",
+  "emptyDescription": "Las ubicaciones de los usuarios aparecerán aquí cuando busquen un lazo y completen su dirección.",
+  "loadError": "No se pudieron cargar los datos del mapa de calor.",
+  "retry": "Intentar de nuevo"
+}

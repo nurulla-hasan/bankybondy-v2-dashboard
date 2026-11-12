@@ -249,3 +249,10 @@
     translate: 100% 0;
   }
 }
+
+/* Heat map markers: Leaflet sets SVG presentation attributes, so a class rule
+   is what lets the circles follow the theme's destructive token. */
+.leaflet-heat-marker {
+  stroke: var(--destructive);
+  fill: var(--destructive);
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Heat Map",
+  "subtitle": "Where users are when they look for a bond, aggregated by location and city.",
+  "mapTitle": "Users by location",
+  "citiesTitle": "Top cities",
+  "usersCount": "{count, plural, one {# user} other {# users}}",
+  "clustersCount": "{count, plural, one {# location cluster} other {# location clusters}}",
+  "noLocationData": "No location data available",
+  "noCityData": "No city data yet.",
+  "emptyTitle": "No location data yet",
+  "emptyDescription": "User locations appear here once they search for a bond and complete their address.",
+  "loadError": "Could not load the heat map data.",
+  "retry": "Try again"
+}

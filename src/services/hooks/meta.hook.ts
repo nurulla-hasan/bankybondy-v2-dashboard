@@ -8,6 +8,7 @@ import {
   getEarningChartData,
   getSubscriptionStats,
   getUserChartData,
+  getUserGeoAggregation,
 } from "../api/meta.api";
 
 export function useDashboardMeta() {
@@ -56,5 +57,12 @@ export function useAudioDistribution() {
   return useQuery({
     queryKey: ["meta", "audio-distribution"],
     queryFn: getAudioDistribution,
+  });
+}
+
+export function useUserGeoAggregation() {
+  return useQuery({
+    queryKey: ["meta", "user-geo-aggregation"],
+    queryFn: getUserGeoAggregation,
   });
 }

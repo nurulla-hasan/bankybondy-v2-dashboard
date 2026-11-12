@@ -1,5 +1,5 @@
 import { apiClient } from "@/lib/api-client";
-import type { ApiResponse } from "@/types";
+import type { ApiResponse, UserGeoAggregation } from "@/types";
 
 export interface DashboardMeta {
   totalUser: number;
@@ -109,4 +109,11 @@ export function getEarningChartData(year: number) {
 /** GET /meta/audio-pie-chart — short vs long audio totals. */
 export function getAudioDistribution() {
   return apiClient<ApiResponse<AudioDistribution>>("/meta/audio-pie-chart");
+}
+
+/** GET /meta/user-geo-aggregation — users grouped by coordinate and by city. */
+export function getUserGeoAggregation() {
+  return apiClient<ApiResponse<UserGeoAggregation>>(
+    "/meta/user-geo-aggregation",
+  );
 }

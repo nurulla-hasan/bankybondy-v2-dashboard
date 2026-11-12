@@ -30,6 +30,7 @@ export default getRequestConfig(async () => {
       AudioModeration: (
         await import(`../../messages/${locale}/audio-moderation.json`)
       ).default,
+      HeatMap: (await import(`../../messages/${locale}/heat-map.json`)).default,
     },
   };
 });

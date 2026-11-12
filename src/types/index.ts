@@ -3,6 +3,7 @@ export * from "./admin.types";
 export * from "./audio.types";
 export * from "./auth.types";
 export * from "./donate.types";
+export * from "./geo.types";
 export * from "./report.types";
 export * from "./settings.types";
 export * from "./skill.types";
