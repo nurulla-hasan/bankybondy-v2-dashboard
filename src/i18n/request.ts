@@ -21,6 +21,7 @@ export default getRequestConfig(async () => {
       Dashboard: (await import(`../../messages/${locale}/dashboard.json`))
         .default,
       Users: (await import(`../../messages/${locale}/users.json`)).default,
+      Skills: (await import(`../../messages/${locale}/skills.json`)).default,
     },
   };
 });
