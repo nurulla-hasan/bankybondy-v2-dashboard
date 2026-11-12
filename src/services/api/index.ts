@@ -1,3 +1,4 @@
+export * from "./admins.api";
 export * from "./auth.api";
 export * from "./meta.api";
 export * from "./settings.api";

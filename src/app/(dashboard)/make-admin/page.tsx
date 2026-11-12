@@ -1,5 +1,17 @@
-import { ModulePlaceholder } from "@/components/common/module-placeholder";
+import { redirect } from "next/navigation";
 
-export default function MakeAdminPage() {
-  return <ModulePlaceholder titleKey="makeAdmin" />;
+import { getSession } from "@/lib/session";
+
+import { AdminsView } from "./_components";
+
+export default async function MakeAdminPage() {
+  const session = await getSession();
+
+  if (!session) redirect("/login");
+
+  // The API scopes every admin endpoint to superAdmin; keep plain admins out
+  // of a page that can only render permission errors for them.
+  if (session.role !== "superAdmin") redirect("/dashboard");
+
+  return <AdminsView />;
 }
