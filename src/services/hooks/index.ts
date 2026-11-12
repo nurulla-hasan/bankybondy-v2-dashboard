@@ -1,4 +1,5 @@
 export * from "./admins.hook";
+export * from "./audio-moderation.hook";
 export * from "./auth.hook";
 export * from "./donors.hook";
 export * from "./income.hook";

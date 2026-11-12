@@ -1,4 +1,5 @@
 export * from "./admins.api";
+export * from "./audio-moderation.api";
 export * from "./auth.api";
 export * from "./donors.api";
 export * from "./income.api";

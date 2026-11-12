@@ -27,6 +27,9 @@ export default getRequestConfig(async () => {
       Reports: (await import(`../../messages/${locale}/reports.json`)).default,
       Income: (await import(`../../messages/${locale}/income.json`)).default,
       Donors: (await import(`../../messages/${locale}/donors.json`)).default,
+      AudioModeration: (
+        await import(`../../messages/${locale}/audio-moderation.json`)
+      ).default,
     },
   };
 });

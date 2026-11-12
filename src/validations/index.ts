@@ -1,4 +1,5 @@
 export * from "./admins.validation";
+export * from "./audio-moderation.validation";
 export * from "./auth.validation";
 export * from "./income.validation";
 export * from "./reports.validation";

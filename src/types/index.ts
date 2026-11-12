@@ -1,5 +1,6 @@
 export * from "./api.types";
 export * from "./admin.types";
+export * from "./audio.types";
 export * from "./auth.types";
 export * from "./donate.types";
 export * from "./report.types";
