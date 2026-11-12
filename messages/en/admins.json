@@ -1,4 +1,6 @@
 {
+  "title": "Admins",
+  "subtitle": "Every account with dashboard access. Create new admins and remove access when needed.",
   "searchPlaceholder": "Search admins by name",
   "sortNewest": "Newest first",
   "sortOldest": "Oldest first",

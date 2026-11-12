@@ -1,4 +1,6 @@
 {
+  "title": "Audio moderation",
+  "subtitle": "Review uploaded audio and block or remove content that breaks the rules.",
   "searchPlaceholder": "Search audios by title or description",
   "statusFilter": "All statuses",
   "blockedFilter": "All audios",

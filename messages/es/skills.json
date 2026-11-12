@@ -1,4 +1,6 @@
 {
+  "title": "Habilidades",
+  "subtitle": "Habilidades que los usuarios pueden añadir a su perfil y usar para el matching.",
   "searchPlaceholder": "Buscar habilidades",
   "sortNewest": "Más recientes",
   "sortOldest": "Más antiguas",

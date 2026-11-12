@@ -1,4 +1,6 @@
 {
+  "title": "Reports",
+  "subtitle": "User reports reviewed by the moderation team.",
   "searchPlaceholder": "Search reports by incident type",
   "incidentFilter": "All incidents",
   "sortNewest": "Newest first",

@@ -1,4 +1,6 @@
 {
+  "title": "Ingresos",
+  "subtitle": "Donaciones y suscripciones recibidas por plan y moneda.",
   "typeFilter": "Todos los tipos",
   "planFilter": "Todos los planes",
   "currencyFilter": "Todas las monedas",

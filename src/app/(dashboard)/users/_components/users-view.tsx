@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { DataTable } from "@/components/common/data-table";
 import { FilterSelect } from "@/components/common/filter-select";
 import { SearchInput } from "@/components/common/search-input";
-// import { SectionHeading } from "@/components/common/section-heading";
+import { SectionHeading } from "@/components/common/section-heading";
 import { useNextFilter } from "@/hooks/useNextFilter";
 import { getErrorMessage } from "@/lib/error";
 import { useUsers } from "@/services";
@@ -52,13 +52,13 @@ export function UsersView({ role }: { role: string }) {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* <SectionHeading
+      <SectionHeading
         as="h3"
         alignment="left"
         constrain={false}
         title={t("title")}
         description={t("subtitle")}
-      /> */}
+      />
 
       <UsersStats />
 

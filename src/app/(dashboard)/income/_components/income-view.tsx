@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { DataTable } from "@/components/common/data-table";
 import { FilterSelect } from "@/components/common/filter-select";
+import { SectionHeading } from "@/components/common/section-heading";
 import { useNextFilter } from "@/hooks/useNextFilter";
 import { getErrorMessage } from "@/lib/error";
 import { useTransactions } from "@/services";
@@ -63,7 +64,15 @@ export function IncomeView() {
   const transactions = useTransactions(query);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
+      <SectionHeading
+        as="h3"
+        alignment="left"
+        constrain={false}
+        title={t("title")}
+        description={t("subtitle")}
+      />
+
       <div className="flex flex-wrap items-center gap-2 sm:justify-end">
         <FilterSelect
           filterKey="type"

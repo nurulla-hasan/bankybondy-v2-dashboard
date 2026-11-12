@@ -1,4 +1,6 @@
 {
+  "title": "Gestión de reportes",
+  "subtitle": "Reportes de usuarios revisados por el equipo de moderación.",
   "searchPlaceholder": "Buscar reportes por tipo de incidente",
   "incidentFilter": "Todos los incidentes",
   "sortNewest": "Más recientes",

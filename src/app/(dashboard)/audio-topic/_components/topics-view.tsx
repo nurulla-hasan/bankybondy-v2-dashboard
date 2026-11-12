@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { DataTable } from "@/components/common/data-table";
 import { SearchInput } from "@/components/common/search-input";
+import { SectionHeading } from "@/components/common/section-heading";
 import { useNextFilter } from "@/hooks/useNextFilter";
 import { getErrorMessage } from "@/lib/error";
 import { useTopics } from "@/services";
@@ -32,7 +33,15 @@ export function TopicsView() {
   const topics = useTopics(query);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
+      <SectionHeading
+        as="h3"
+        alignment="left"
+        constrain={false}
+        title={t("title")}
+        description={t("subtitle")}
+      />
+
       <div className="flex flex-wrap items-center gap-3">
         <SearchInput
           placeholder={t("searchPlaceholder")}

@@ -1,4 +1,6 @@
 {
+  "title": "Administradores",
+  "subtitle": "Todas las cuentas con acceso al panel. Crea nuevos administradores y retira el acceso cuando sea necesario.",
   "searchPlaceholder": "Buscar administradores por nombre",
   "sortNewest": "Más recientes",
   "sortOldest": "Más antiguos",

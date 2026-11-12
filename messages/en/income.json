@@ -1,4 +1,6 @@
 {
+  "title": "Income",
+  "subtitle": "Donations and subscriptions received across plans and currencies.",
   "typeFilter": "All types",
   "planFilter": "All plans",
   "currencyFilter": "All currencies",

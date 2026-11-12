@@ -1,4 +1,6 @@
 {
+  "title": "Audio topics",
+  "subtitle": "Topics used to categorize and filter audio content.",
   "searchPlaceholder": "Search topics",
   "columnTopic": "Topic",
   "columnCreated": "Created",

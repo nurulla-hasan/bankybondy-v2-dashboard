@@ -1,4 +1,6 @@
 {
+  "title": "Moderación de audio",
+  "subtitle": "Revisa los audios subidos y bloquea o elimina el contenido que incumpla las normas.",
   "searchPlaceholder": "Buscar audios por título o descripción",
   "statusFilter": "Todos los estados",
   "blockedFilter": "Todos los audios",
