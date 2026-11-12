@@ -1,5 +1,6 @@
 export * from "./admins.validation";
 export * from "./auth.validation";
+export * from "./income.validation";
 export * from "./reports.validation";
 export * from "./settings.validation";
 export * from "./skills.validation";

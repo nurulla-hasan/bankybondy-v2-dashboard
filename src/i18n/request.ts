@@ -25,6 +25,7 @@ export default getRequestConfig(async () => {
       Skills: (await import(`../../messages/${locale}/skills.json`)).default,
       Topics: (await import(`../../messages/${locale}/topics.json`)).default,
       Reports: (await import(`../../messages/${locale}/reports.json`)).default,
+      Income: (await import(`../../messages/${locale}/income.json`)).default,
     },
   };
 });

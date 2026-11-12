@@ -5,4 +5,5 @@ export * from "./report.types";
 export * from "./settings.types";
 export * from "./skill.types";
 export * from "./topic.types";
+export * from "./transaction.types";
 export * from "./user.types";

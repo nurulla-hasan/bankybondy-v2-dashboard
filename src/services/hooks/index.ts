@@ -1,5 +1,6 @@
 export * from "./admins.hook";
 export * from "./auth.hook";
+export * from "./income.hook";
 export * from "./meta.hook";
 export * from "./reports.hook";
 export * from "./settings.hook";

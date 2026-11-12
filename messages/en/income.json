@@ -1,0 +1,18 @@
+{
+  "typeFilter": "All types",
+  "planFilter": "All plans",
+  "currencyFilter": "All currencies",
+  "sortNewest": "Newest first",
+  "sortOldest": "Oldest first",
+  "sortAmountHigh": "Highest amount",
+  "sortAmountLow": "Lowest amount",
+  "columnUser": "User",
+  "columnType": "Type",
+  "columnPlan": "Plan",
+  "columnAmount": "Amount",
+  "columnTransaction": "Transaction ID",
+  "columnDate": "Date",
+  "refundPending": "Refund pending",
+  "unknownUser": "Deleted user",
+  "loadError": "Could not load transactions."
+}

@@ -1,0 +1,18 @@
+{
+  "typeFilter": "Todos los tipos",
+  "planFilter": "Todos los planes",
+  "currencyFilter": "Todas las monedas",
+  "sortNewest": "Más recientes",
+  "sortOldest": "Más antiguos",
+  "sortAmountHigh": "Mayor importe",
+  "sortAmountLow": "Menor importe",
+  "columnUser": "Usuario",
+  "columnType": "Tipo",
+  "columnPlan": "Plan",
+  "columnAmount": "Importe",
+  "columnTransaction": "ID de transacción",
+  "columnDate": "Fecha",
+  "refundPending": "Reembolso pendiente",
+  "unknownUser": "Usuario eliminado",
+  "loadError": "No se pudieron cargar las transacciones."
+}
