@@ -54,7 +54,7 @@ export function Modal({
 
       <DialogContent
         className={cn(
-          "flex max-h-[calc(100dvh-2rem)] flex-col gap-0 overflow-hidden p-0",
+          "flex max-h-[calc(100dvh-10rem)] flex-col gap-0 overflow-hidden p-0",
           sizeClasses[size],
           className,
         )}

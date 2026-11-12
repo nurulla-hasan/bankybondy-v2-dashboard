@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import { SectionHeading } from "@/components/common/section-heading";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useNextFilter } from "@/hooks/useNextFilter";
 import type { LegalDocumentKind, LegalDocuments } from "@/types";
@@ -68,13 +69,15 @@ export function SettingsView({
           });
         }}
       >
-        <TabsList variant="line" className="mb-2">
-          {TABS.map((tab) => (
-            <TabsTrigger key={tab.value} value={tab.value}>
-              {t(tab.labelKey)}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+        <ScrollArea className="w-full overflow-x-auto">
+          <TabsList variant="line" className="mb-2">
+            {TABS.map((tab) => (
+              <TabsTrigger key={tab.value} value={tab.value}>
+                {t(tab.labelKey)}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </ScrollArea>
 
         <TabsContent value="profile">
           <div className="flex flex-col gap-6">
