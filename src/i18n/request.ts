@@ -20,6 +20,7 @@ export default getRequestConfig(async () => {
       Auth: (await import(`../../messages/${locale}/auth.json`)).default,
       Dashboard: (await import(`../../messages/${locale}/dashboard.json`))
         .default,
+      Editor: (await import(`../../messages/${locale}/editor.json`)).default,
       Users: (await import(`../../messages/${locale}/users.json`)).default,
       Admins: (await import(`../../messages/${locale}/admins.json`)).default,
       Skills: (await import(`../../messages/${locale}/skills.json`)).default,

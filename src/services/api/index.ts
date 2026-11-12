@@ -3,6 +3,7 @@ export * from "./audio-moderation.api";
 export * from "./auth.api";
 export * from "./donors.api";
 export * from "./income.api";
+export * from "./legal.api";
 export * from "./meta.api";
 export * from "./reports.api";
 export * from "./settings.api";

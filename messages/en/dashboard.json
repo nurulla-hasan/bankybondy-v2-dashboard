@@ -103,5 +103,11 @@
   "sweepOff": "Off",
   "sweepCron": "Sweep schedule (cron, worker timezone)",
   "sweepCronDesc": "Uses the worker's local timezone, not your browser's. Optional seconds are supported; the server validates the schedule.",
-  "sweepBatch": "Sweep batch size"
+  "sweepBatch": "Sweep batch size",
+  "legalPublicHint": "This content is shown on the public website and app.",
+  "legalEmpty": "No content has been published yet.",
+  "legalUpdated": "Last updated {date}",
+  "legalSaveFailed": "Could not save this content.",
+  "legalEditorPlaceholder": "Write the content here...",
+  "writeContent": "Write content"
 }

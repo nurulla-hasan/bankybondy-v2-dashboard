@@ -103,5 +103,11 @@
   "sweepOff": "Desactivado",
   "sweepCron": "Calendario del barrido (cron, zona horaria del worker)",
   "sweepCronDesc": "Usa la zona horaria local del worker, no la del navegador. Admite segundos opcionales; el servidor valida el calendario.",
-  "sweepBatch": "Tamaño de lote del barrido"
+  "sweepBatch": "Tamaño de lote del barrido",
+  "legalPublicHint": "Este contenido se muestra en el sitio web y la app públicos.",
+  "legalEmpty": "Todavía no se ha publicado contenido.",
+  "legalUpdated": "Última actualización: {date}",
+  "legalSaveFailed": "No se pudo guardar este contenido.",
+  "legalEditorPlaceholder": "Escribe el contenido aquí...",
+  "writeContent": "Escribir contenido"
 }

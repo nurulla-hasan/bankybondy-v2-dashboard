@@ -3,15 +3,11 @@
 import { useTranslations } from "next-intl";
 
 import { SectionHeading } from "@/components/common/section-heading";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useNextFilter } from "@/hooks/useNextFilter";
+import type { LegalDocumentKind, LegalDocuments } from "@/types";
 
+import { LegalDocumentCard } from "./legal-document";
 import { MatchingSection } from "./matching-section";
 import { PasswordCard } from "./password-card";
 import { ProfileCard } from "./profile-card";
@@ -25,9 +21,26 @@ const TABS = [
 
 type SettingsTab = (typeof TABS)[number]["value"];
 
-const LEGAL_TABS = TABS.filter((tab) => tab.value !== "profile");
+const LEGAL_TABS = [
+  { value: "about", labelKey: "settingsTabAbout" },
+  { value: "terms", labelKey: "settingsTabTerms" },
+  { value: "privacy", labelKey: "settingsTabPrivacy" },
+] as const;
 
-export function SettingsView({ role }: { role: string }) {
+/** About us is open to admins; the legal policies are super-admin only. */
+function canEditLegal(kind: LegalDocumentKind, role: string) {
+  return kind === "about"
+    ? role === "admin" || role === "superAdmin"
+    : role === "superAdmin";
+}
+
+export function SettingsView({
+  role,
+  legalDocuments,
+}: {
+  role: string;
+  legalDocuments: LegalDocuments;
+}) {
   const t = useTranslations("Dashboard");
   const filters = useNextFilter<"tab">();
 
@@ -73,12 +86,12 @@ export function SettingsView({ role }: { role: string }) {
 
         {LEGAL_TABS.map((tab) => (
           <TabsContent key={tab.value} value={tab.value}>
-            <Card>
-              <CardHeader>
-                <CardTitle>{t(tab.labelKey)}</CardTitle>
-                <CardDescription>{t("comingSoonBody")}</CardDescription>
-              </CardHeader>
-            </Card>
+            <LegalDocumentCard
+              kind={tab.value}
+              title={t(tab.labelKey)}
+              content={legalDocuments[tab.value]}
+              canEdit={canEditLegal(tab.value, role)}
+            />
           </TabsContent>
         ))}
       </Tabs>

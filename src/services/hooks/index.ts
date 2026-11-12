@@ -3,6 +3,7 @@ export * from "./audio-moderation.hook";
 export * from "./auth.hook";
 export * from "./donors.hook";
 export * from "./income.hook";
+export * from "./legal.hook";
 export * from "./meta.hook";
 export * from "./reports.hook";
 export * from "./settings.hook";
