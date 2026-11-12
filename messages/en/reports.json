@@ -1,0 +1,27 @@
+{
+  "searchPlaceholder": "Search reports by incident type",
+  "incidentFilter": "All incidents",
+  "sortNewest": "Newest first",
+  "sortOldest": "Oldest first",
+  "columnReporter": "Reported by",
+  "columnReported": "Reported user",
+  "columnIncident": "Incident",
+  "columnNote": "Additional note",
+  "columnReportedAt": "Reported",
+  "unknownUser": "Deleted user",
+  "deleteReport": "Delete report",
+  "deleteTitle": "Delete this report?",
+  "deleteDescription": "The report against \"{name}\" is removed permanently. This cannot be undone.",
+  "confirmDelete": "Delete report",
+  "deleting": "Deleting...",
+  "cancel": "Cancel",
+  "deletedToast": "Report deleted.",
+  "deleteFailed": "Could not delete the report.",
+  "loadError": "Could not load reports.",
+  "incidentTypes": {
+    "Unprofessional Behavior": "Unprofessional behavior",
+    "Failure to collaborate": "Failure to collaborate",
+    "Spam": "Spam",
+    "Other": "Other"
+  }
+}

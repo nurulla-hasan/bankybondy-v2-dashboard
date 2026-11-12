@@ -1,0 +1,27 @@
+{
+  "searchPlaceholder": "Buscar reportes por tipo de incidente",
+  "incidentFilter": "Todos los incidentes",
+  "sortNewest": "Más recientes",
+  "sortOldest": "Más antiguos",
+  "columnReporter": "Reportado por",
+  "columnReported": "Usuario reportado",
+  "columnIncident": "Incidente",
+  "columnNote": "Nota adicional",
+  "columnReportedAt": "Fecha",
+  "unknownUser": "Usuario eliminado",
+  "deleteReport": "Eliminar reporte",
+  "deleteTitle": "¿Eliminar este reporte?",
+  "deleteDescription": "El reporte contra «{name}» se elimina de forma permanente. Esta acción no se puede deshacer.",
+  "confirmDelete": "Eliminar reporte",
+  "deleting": "Eliminando...",
+  "cancel": "Cancelar",
+  "deletedToast": "Reporte eliminado.",
+  "deleteFailed": "No se pudo eliminar el reporte.",
+  "loadError": "No se pudieron cargar los reportes.",
+  "incidentTypes": {
+    "Unprofessional Behavior": "Comportamiento poco profesional",
+    "Failure to collaborate": "Falta de colaboración",
+    "Spam": "Spam",
+    "Other": "Otro"
+  }
+}
