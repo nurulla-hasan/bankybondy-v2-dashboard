@@ -155,6 +155,135 @@ export function MatchingFormModal({
 
           <FormInput
             form={form}
+            name="emptyEncounter"
+            label={t("emptyEncounter")}
+            description={t("emptyEncounterDesc")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="emptyMixed"
+            label={t("emptyMixed")}
+            description={t("emptyMixedDesc")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="minScore"
+            label={t("minScore")}
+            description={t("minScoreDesc")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="minServeScore"
+            label={t("minServeScore")}
+            description={t("minServeScoreDesc")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="wMin"
+            label={t("wMin")}
+            description={t("wMinDesc")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="weightSem"
+            label={t("weightSem")}
+            description={t("weightsDesc")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="weightRep"
+            label={t("weightRep")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="weightProx"
+            label={t("weightProx")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="weightFresh"
+            label={t("weightFresh")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="pairBias"
+            label={t("pairBias")}
+            description={t("pairBiasDesc")}
+            type="number"
+            step="0.01"
+            min={0}
+            max={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
+            name="maxResults"
+            label={t("maxResults")}
+            description={t("maxResultsDesc")}
+            type="number"
+            min={1}
+            max={500}
+            step={1}
+            disabled={isPending}
+          />
+
+          <FormInput
+            form={form}
             name="frontierSeeds"
             label={t("frontierSeeds")}
             type="number"

@@ -53,7 +53,7 @@ export function MatchingSection({ role }: { role: string }) {
             aria-busy="true"
             aria-label={t("matchingLoading")}
           >
-            {Array.from({ length: 9 }, (_, index) => (
+            {Array.from({ length: 20 }, (_, index) => (
               <div key={index} className="grid h-16" aria-hidden="true">
                 <Skeleton />
               </div>
@@ -89,6 +89,20 @@ export function MatchingSection({ role }: { role: string }) {
               label={t("surpriseMargin")}
               value={config.surpriseMargin}
             />
+            <DetailItem
+              label={t("emptyEncounter")}
+              value={config.emptyEncounter}
+            />
+            <DetailItem label={t("emptyMixed")} value={config.emptyMixed} />
+            <DetailItem label={t("minScore")} value={config.minScore} />
+            <DetailItem label={t("minServeScore")} value={config.minServeScore} />
+            <DetailItem label={t("wMin")} value={config.wMin} />
+            <DetailItem label={t("weightSem")} value={config.weightSem} />
+            <DetailItem label={t("weightRep")} value={config.weightRep} />
+            <DetailItem label={t("weightProx")} value={config.weightProx} />
+            <DetailItem label={t("weightFresh")} value={config.weightFresh} />
+            <DetailItem label={t("pairBias")} value={config.pairBias} />
+            <DetailItem label={t("maxResults")} value={config.maxResults} />
             <DetailItem label={t("frontierSeeds")} value={config.frontierSeeds} />
             <DetailItem
               label={t("frontierEnabled")}

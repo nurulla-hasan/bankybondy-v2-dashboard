@@ -8,6 +8,17 @@ const settings = Object.freeze({
   cacheTtlMinutes: 60,
   surpriseFloor: 0.45,
   surpriseMargin: 0.1,
+  emptyEncounter: 0.45,
+  emptyMixed: 0.42,
+  minScore: 0.4,
+  minServeScore: 0.4,
+  wMin: 0.7,
+  weightSem: 0.5,
+  weightRep: 0.25,
+  weightProx: 0.15,
+  weightFresh: 0.1,
+  pairBias: 0.02,
+  maxResults: 100,
   frontierSeeds: 5,
   sweepEnabled: true,
   sweepBatch: 1500,
@@ -42,6 +53,10 @@ for (const [key, min, max] of [
   ["sweepBatch", 1, 20000],
   ["surpriseFloor", 0, 1],
   ["surpriseMargin", 0, 1],
+  ["minServeScore", 0, 1],
+  ["wMin", 0, 1],
+  ["pairBias", 0, 1],
+  ["maxResults", 1, 500],
 ]) {
   test(`${key} accepts both boundaries and rejects out-of-range values`, () => {
     for (const value of [min, max]) {
@@ -53,7 +68,7 @@ for (const [key, min, max] of [
   });
 }
 
-for (const key of ["cacheTtlMinutes", "frontierSeeds", "sweepBatch"]) {
+for (const key of ["cacheTtlMinutes", "frontierSeeds", "sweepBatch", "maxResults"]) {
   test(`${key} rejects fractional values`, () => {
     assert.equal(validation.matchingSettingsSchema.safeParse({ ...settings, [key]: 1.5 }).success, false);
   });
@@ -85,8 +100,33 @@ test("draft contains only writable settings, never audit metadata", () => {
   const draft = validation.matchingSettingsSchema.parse(settings);
   assert.deepEqual(Object.keys(draft).sort(), [
     "candidateMode", "frontierEnabled", "cacheTtlMinutes", "surpriseFloor", "surpriseMargin",
+    "emptyEncounter", "emptyMixed", "minScore", "minServeScore", "wMin",
+    "weightSem", "weightRep", "weightProx", "weightFresh", "pairBias", "maxResults",
     "frontierSeeds", "sweepEnabled", "sweepBatch", "sweepCron",
   ].sort());
+});
+
+test("cross-field rules keep the empty bands ordered and weights normalized", () => {
+  for (const valid of [
+    { minScore: 0, emptyMixed: 0.01, emptyEncounter: 0.02 },
+    { emptyMixed: 0.99, emptyEncounter: 1 },
+    { weightSem: 0, weightRep: 0, weightProx: 0, weightFresh: 1 },
+    { weightSem: 1, weightRep: 0, weightProx: 0, weightFresh: 0 },
+  ]) {
+    assert.equal(validation.matchingSettingsSchema.safeParse({ ...settings, ...valid }).success, true, JSON.stringify(valid));
+  }
+  for (const invalid of [
+    { emptyMixed: 0.5 },
+    { emptyEncounter: 0.4 },
+    { emptyEncounter: 1.1 },
+    { minScore: 0.43 },
+    { weightSem: 0.4 },
+    { weightFresh: 1.1 },
+  ]) {
+    assert.equal(validation.matchingSettingsSchema.safeParse({ ...settings, ...invalid }).success, false, JSON.stringify(invalid));
+  }
+  const draft = validation.matchingSettingsSchema.parse({ ...settings, emptyMixed: 0.43, weightSem: 0.55, weightFresh: 0.05 });
+  assert.equal(draft.emptyMixed, 0.43);
 });
 
 test("profile and password schemas still enforce their existing rules", () => {
